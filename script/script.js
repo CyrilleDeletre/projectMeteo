@@ -7,9 +7,9 @@ function createElementHtml(type, parent, id, className, contenu, event) {
     elementHtml.className = className;
 
     //si on a une balise text : on creer du texte
-    // if (si on est dans du text = true){
-    //     elementHtml.textContent = contenu;
-    // }
+    if (true){
+        elementHtml.textContent = contenu;
+    }
     // // sinon, si c'est une balise image : 
     // // on créer une source et on donne un chemin a cette source
     // else if(si on est dans une img = true){
@@ -30,7 +30,7 @@ function afficheMeteo(ville) {
     divGlobal.style.display = (divGlobal.style.display === 'none') ? 'flex' : 'none';
 }
 
-fetch('http://57.129.5.9:3000/villes/')
+fetch('../script/apiMeteo.json')
     .then(response => response.json())
     .then(data => {
         data.forEach(ville => {
@@ -44,7 +44,7 @@ fetch('http://57.129.5.9:3000/villes/')
 
             // Div pour afficher les informations (logo / temperature / autre infos)
             divInfos = createElementHtml('div', divGlobal, `divInfos${ville.nom}`, 'div-infos');
-            createElementHtml('img', divInfos, `conditionsMeteo${ville.nom}`, `conditions-meteo-${ville.nom.toLowerCase()}` `src de l'image`);
+            // createElementHtml('img', divInfos, `conditionsMeteo${ville.nom}`, `conditions-meteo-${ville.nom.toLowerCase()}` `src de l'image`);
             createElementHtml('p', divInfos, `temperature${ville.nom}`, `temperature-${ville.nom.toLowerCase()}`, `${ville.temperature}°C`);
 
             // Div pour afficher les autres infos

@@ -58,10 +58,10 @@ fetch('script/apiMeteo.json')
             divCity = createElementHtml('div', carte, `divCity${ville.nom.toLowerCase().replace(/\s/g,'')}`, `div-city ${ville.nom.toLowerCase().replace(/\s/g,'')}`);
 
             // Création des boutons pour chaque ville
-            createElementHtml('button', divCity, `buttonCity${ville.nom}`, `button-city`, "", () => afficheInfosMeteo(ville));
+            createElementHtml('button', divCity, `buttonCity${ville.nom.toLowerCase().replace(/\s/g,'')}`, `button-city`, "", () => afficheInfosMeteo(ville));
 
             // Création du conteneur des informations météos
-            infosMeteosContainer = createElementHtml('div', divCity, `infosMeteosContainer${ville.nom}`, 'div-global');
+            infosMeteosContainer = createElementHtml('div', divCity, `infosMeteosContainer${ville.nom.toLowerCase().replace(/\s/g,'')}`, 'div-global');
 
             // Mise en place par défaut du conteneur en display none
             infosMeteosContainer.style.display = 'none';
@@ -96,7 +96,7 @@ fetch('script/apiMeteo.json')
 
 function afficheInfosMeteo(ville) {
     // On récupère l'id de infosMeteosContainer et une variable pour stocker dans un conteneur chaque données météos
-    let infosMeteosContainer = document.querySelector(`#infosMeteosContainer${ville.nom}`);
+    let infosMeteosContainer = document.querySelector(`#infosMeteosContainer${ville.nom.toLowerCase().replace(/\s/g,'')}`);
 
     // Si une div est déjà ouverte, on la ferme d'abord
     if (currentInfosMeteos && currentInfosMeteos !== infosMeteosContainer) {

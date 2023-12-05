@@ -23,19 +23,118 @@ body {
   background-color: red;
   border-radius: 50%;
   border: none;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
+}
+
+/* .button-city:hover{
+} */
+
+.dunkerque {
+    top: 35px;
+    left: 295px;
 }
 
 .paris {
-    top: 100px;
-    left: 300px;
+    top: 170px;
+    left: 305px;
+}
+
+.marseille {
+    top: 470px;
+    left: 425px;
+}
+
+.lyon {
+    top: 350px;
+    left: 405px;
 }
 
 .toulouse {
-    top: 400px;
-    left: 300px;
+    top: 445px;
+    left: 270px;
 }
+
+.nice{
+    top: 445px;
+    left: 495px;
+}
+
+.nantes{
+    top: 240px;
+    left: 140px;
+}
+
+.montpellier{
+    top: 455px;
+    left: 350px;
+}
+
+.strasbourg{
+    top: 165px;
+    left: 490px;
+}
+
+.bordeaux{
+    top: 395px;
+    left: 190px;
+}
+
+.lille{
+    top: 75px;
+    left: 330px;
+}
+
+.rennes{
+    top: 200px;
+    left: 160px;
+}
+
+.reims{
+    top: 140px;
+    left: 380px;
+}
+
+.lehavre{
+    top: 120px;
+    left: 220px;
+}
+
+.saint-etienne{
+    top: 365px;
+    left: 380px;
+}
+
+.toulon{
+    top: 475px;
+    left: 450px;
+}
+
+.grenoble{
+    top: 370px;
+    left: 435px;
+}
+
+.dijon{
+    top: 255px;
+    left: 405px;
+}
+
+.angers{
+    top: 225px;
+    left: 180px;
+}
+
+.nîmes{
+    top: 440px;
+    left: 385px;
+}
+
+.villeurbanne{
+    top: 340px;
+    left: 415px;
+}
+
 
 .div-global {
     position: relative;

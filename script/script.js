@@ -52,7 +52,7 @@ fetch('script/apiMeteo.json')
             carte = document.querySelector("#carte")
 
             // Création des div city
-            divCity = createElementHtml('div', carte, `divCity${ville.nom}`, `div-city ${ville.nom.toLowerCase()}`);
+            divCity = createElementHtml('div', carte, `divCity${ville.nom.toLowerCase().replace(/\s/g,'')}`, `div-city ${ville.nom.toLowerCase().replace(/\s/g,'')}`);
 
             // Création des boutons pour chaque ville
             createElementHtml('button', divCity, `buttonCity${ville.nom}`, `button-city`, "", () => afficheInfosMeteo(ville));

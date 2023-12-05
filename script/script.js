@@ -38,7 +38,7 @@ function afficheInfosMeteo(ville) {
 }
 
 // Fetch du json si l'api ne marche pas
-fetch('../script/apiMeteo.json')
+fetch('script/apiMeteo.json')
 
 // Fetch de l'api
 // fetch('http://57.129.5.9:3000/villes')

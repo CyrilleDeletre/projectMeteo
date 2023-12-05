@@ -1,4 +1,4 @@
-:root {
+ :root {
     --infos: #16394c;
   }
 .div-global {
@@ -43,4 +43,9 @@ h2{
 h2, p{
     color: white;
     text-align: center;
+}
+.carte{
+    background-color: blue;
+    height: 50px;
+    width: 100px;
 }

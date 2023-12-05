@@ -38,7 +38,7 @@ function afficheInfosMeteo(ville) {
 }
 
 // Fetch du json si l'api ne marche pas
-fetch('../script/apiMeteo.json')
+fetch('script/apiMeteo.json')
 
 // Fetch de l'api
 // fetch('http://57.129.5.9:3000/villes')
@@ -57,14 +57,14 @@ fetch('../script/apiMeteo.json')
 
             // Div pour afficher les informations (logo / temperature / autre infos)
             divInfos = createElementHtml('div', divGlobal, `divInfos${ville.nom}`, 'div-infos');
-            createElementHtml('img', divInfos, `conditionsMeteo${ville.nom}`, `conditions-meteo-${ville.nom.toLowerCase()}`, `/img/${ville.conditionsMeteo}.jpg`);
-            createElementHtml('p', divInfos, `temperature${ville.nom}`, `temperature-${ville.nom.toLowerCase()}`, `${ville.temperature}°C`);
+            createElementHtml('img', divInfos, `conditionsMeteo${ville.nom}`, `conditions-meteo ${ville.nom.toLowerCase()}`, `img/${ville.conditionsMeteo}.jpg`);
+            createElementHtml('p', divInfos, `temperature${ville.nom}`, `temperature ${ville.nom.toLowerCase()}`, `${ville.temperature}°C`);
 
             // Div pour afficher les autres infos
             divOtherInfos = createElementHtml('div', divInfos, `divOtherInfos${ville.nom}`, 'div-other-infos');
             createElementHtml('button', document.body, `myButton${ville.nom}`, 'my-button', ville.nom, () => afficheInfosMeteo(ville));
             createElementHtml('p', divOtherInfos, `humidite${ville.nom}`, `humidite-${ville.nom.toLowerCase()}`, `humidité : ${ville.humidite}`);
-            createElementHtml('p', divOtherInfos, `precipitations${ville.nom}`, `precipitations-${ville.nom.toLowerCase()}`, `précipitations : ${ville.precipitations}`);
+            createElementHtml('p', divOtherInfos, `precipitations${ville.nom}`, `precipitations-${ville.nom.toLowerCase()}`, `précipitations  ${ville.precipitations}`);
             createElementHtml('p', divOtherInfos, `indiceUV${ville.nom}`, `indice-uv-${ville.nom.toLowerCase()}`, `indice UV : ${ville.indiceUV}`);
         });
     })

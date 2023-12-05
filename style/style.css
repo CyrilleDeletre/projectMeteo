@@ -9,6 +9,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    width: 30%;
 }
 
 .div-infos {
@@ -17,13 +18,20 @@
     padding: 20px;
     display: flex;
     justify-content: space-between;
+    margin-right: 10px;
+    padding-left: 10px;
 }
-.conditions-meteo-dunkerque{
-    width: 33%;
+
+.conditions-meteo{
+    width: 50%;
+    justify-content: left;
+  
 }
-.temperature-dunkerque{
-    width: 33%; 
+
+.temperature{
+    width: 20px; 
 }
+
 .div-other-infos{
     width: 33%;
     background-color: var(--infos);

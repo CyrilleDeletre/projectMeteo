@@ -1,3 +1,6 @@
+// Variable qui permet de stocker les infos Métos actuellement ouverte
+let currentInfosMeteos;
+
 // Fonction générique pour créer des éléments html dynamiquement
 function createElementHtml(type, parent, id, className, contenu, event) {
     // Permet de créer un élément html en fonction du paramètre type
@@ -90,15 +93,22 @@ fetch('script/apiMeteo.json')
     })
     .catch(error => console.error('Error fetching data:', error));
 
-// Fonction pour stocker et afficher ou non les informations supplémentaires de chaque ville
-function afficheInfosMeteo(ville) {
-    // On récupère l'id de infosMeteosContainer et  une variable pour stocker dans un conteneur chaque données météos
-    infosMeteosContainer = document.querySelector(`#infosMeteosContainer${ville.nom}`);
 
-    // On lui ajoute le style css display none par défaut et un "toggle" pour l'afficher ou non au clique
+function afficheInfosMeteo(ville) {
+    // On récupère l'id de infosMeteosContainer et une variable pour stocker dans un conteneur chaque données météos
+    let infosMeteosContainer = document.querySelector(`#infosMeteosContainer${ville.nom}`);
+
+    // Si une div est déjà ouverte, on la ferme d'abord
+    if (currentInfosMeteos && currentInfosMeteos !== infosMeteosContainer) {
+        currentInfosMeteos.style.display = 'none';
+    }
+
+    // On stocke la référence à la nouvelle div actuellement ouverte
+    currentInfosMeteos = infosMeteosContainer;
+
+
+    // On lui ajoute le style css display none par défaut et un "toggle" pour l'afficher ou non au clic
     infosMeteosContainer.style.display = (infosMeteosContainer.style.display === 'none') ? 'flex' : 'none';
 }
-
-
 
 

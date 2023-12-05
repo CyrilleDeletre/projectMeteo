@@ -26,18 +26,23 @@ body {
   width: 15px;
   height: 15px;
 }
+.button-city-paris {
+  background-color: rgb(255, 162, 0);
+  width: 25px;
+  height: 25px;
+}
 
 /* .button-city:hover{
 } */
 
 .dunkerque {
-    top: 35px;
+    top: 40px;
     left: 295px;
 }
 
 .paris {
-    top: 170px;
-    left: 305px;
+    top: 160px;
+    left: 300px;
 }
 
 .marseille {
@@ -81,8 +86,8 @@ body {
 }
 
 .lille{
-    top: 75px;
-    left: 330px;
+    top: 60px;
+    left: 325px;
 }
 
 .rennes{

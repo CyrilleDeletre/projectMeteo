@@ -30,7 +30,7 @@ function createElementHtml(type, parent, id, className, contenu, event) {
 }
 
 // Fetch du json si l'api ne marche pas
-fetch('../script/apiMeteo.json')
+fetch('script/apiMeteo.json')
 
     // Fetch de l'api
     // fetch('http://57.129.5.9:3000/villes')
@@ -60,7 +60,7 @@ fetch('../script/apiMeteo.json')
             divInfos = createElementHtml('div', infosMeteosContainer, `divInfos${ville.nom}`, 'div-infos');
 
             // Création d'une balise img pour afficher une icone en fonction de la météo
-            createElementHtml('img', divInfos, `conditionsMeteo${ville.nom}`, `conditions-meteo ${ville.nom.toLowerCase()}`, `/img/${ville.conditionsMeteo}.jpg`);
+            createElementHtml('img', divInfos, `conditionsMeteo${ville.nom}`, `conditions-meteo ${ville.nom.toLowerCase()}`, `img/${ville.conditionsMeteo}.jpg`);
             
             // Création d'une balise p pour affiche la température
             createElementHtml('p', divInfos, `temperature${ville.nom}`, `temperature-${ville.nom.toLowerCase()}`, `${ville.temperature}°C`);

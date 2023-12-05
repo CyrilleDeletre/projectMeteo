@@ -103,7 +103,7 @@ function afficheInfosMeteo(ville) {
         currentInfosMeteos.style.display = 'none';
     }
 
-    // On stocke la référence à la nouvelle div actuellement ouverte
+    // On stocke les informations de la dive actuellement ouverte dans la varaible currentInfosMeteos
     currentInfosMeteos = infosMeteosContainer;
 
 

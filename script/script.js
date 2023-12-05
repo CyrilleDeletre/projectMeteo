@@ -111,4 +111,15 @@ function afficheInfosMeteo(ville) {
     infosMeteosContainer.style.display = (infosMeteosContainer.style.display === 'none') ? 'flex' : 'none';
 }
 
-
+// Ajouter un écouteur d'événements au document entier
+document.addEventListener('click', function (event) {
+    // Vérifier si l'élément cliqué n'est pas un descendant de la div infosMeteos
+    // et n'est pas un bouton de ville
+    if (currentInfosMeteos && !currentInfosMeteos.contains(event.target) && !event.target.classList.contains('button-city')) {
+        // Fermer la div infosMeteos
+        currentInfosMeteos.style.display = 'none';
+        // Réinitialiser la variable currentInfosMeteos
+        currentInfosMeteos = null;
+    }
+    
+});

@@ -10,7 +10,7 @@ function createElementHtml(type, parent, id, className, contenu, event) {
 
     // Permet d'ajouter du contenu à cet élément html en fonction du paramètre contenu
     // Si on a crée un élément html de type p ou h2 : on change le contenu de la balise en fonction du paramètre contenu
-    if (type === 'p' || type === 'h2' || type === 'button') {
+    if (type === 'p' || type === 'h2') {
         elementHtml.textContent = contenu
     }
 
@@ -29,6 +29,8 @@ function createElementHtml(type, parent, id, className, contenu, event) {
     return elementHtml;
 }
 
+createElementHtml('div', document.body, 'carte', 'carte')
+
 // Fetch du json si l'api ne marche pas
 fetch('script/apiMeteo.json')
 
@@ -43,12 +45,20 @@ fetch('script/apiMeteo.json')
             let infosMeteosContainer
             let divInfos
             let divOtherInfos
+            let divCity
+            let carte
+
+            // Récupération de la carte en js
+            carte = document.querySelector("#carte")
+
+            // Création des div city
+            divCity = createElementHtml('div', carte, `divCity${ville.nom}`, `div-city ${ville.nom.toLowerCase()}`);
 
             // Création des boutons pour chaque ville
-            createElementHtml('button', document.body, `myButton${ville.nom}`, 'my-button', ville.nom, () => afficheInfosMeteo(ville));
+            createElementHtml('button', divCity, `buttonCity${ville.nom}`, `button-city`, "", () => afficheInfosMeteo(ville));
 
             // Création du conteneur des informations météos
-            infosMeteosContainer = createElementHtml('div', document.body, `infosMeteosContainer${ville.nom}`, 'div-global');
+            infosMeteosContainer = createElementHtml('div', divCity, `infosMeteosContainer${ville.nom}`, 'div-global');
 
             // Mise en place par défaut du conteneur en display none
             infosMeteosContainer.style.display = 'none';

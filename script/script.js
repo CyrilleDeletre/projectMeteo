@@ -63,19 +63,19 @@ fetch('script/apiMeteo.json')
             createElementHtml('img', divInfos, `conditionsMeteo${ville.nom}`, `conditions-meteo ${ville.nom.toLowerCase()}`, `img/${ville.conditionsMeteo}.jpg`);
             
             // Création d'une balise p pour affiche la température
-            createElementHtml('p', divInfos, `temperature${ville.nom}`, `temperature-${ville.nom.toLowerCase()}`, `${ville.temperature}°C`);
+            createElementHtml('p', divInfos, `temperature${ville.nom}`, `temperature ${ville.nom.toLowerCase()}`, `${ville.temperature}°C`);
 
             // Création d'une div pour contenir les informations météos supplémentaires
             divOtherInfos = createElementHtml('div', divInfos, `divOtherInfos${ville.nom}`, 'div-other-infos');
 
             // Création d'une balise p pour afficher le taux d'humidité
-            createElementHtml('p', divOtherInfos, `humidite${ville.nom}`, `humidite-${ville.nom.toLowerCase()}`, `humidité : ${ville.humidite}`);
+            createElementHtml('p', divOtherInfos, `humidite${ville.nom}`, `humidite ${ville.nom.toLowerCase()}`, `humidité : ${ville.humidite}`);
             
             // Création d'une balise p pour afficher les précipitations
-            createElementHtml('p', divOtherInfos, `precipitations${ville.nom}`, `precipitations-${ville.nom.toLowerCase()}`, `précipitations : ${ville.precipitations}`);
+            createElementHtml('p', divOtherInfos, `precipitations${ville.nom}`, `precipitations ${ville.nom.toLowerCase()}`, `précipitations : ${ville.precipitations}`);
             
             // Création d'une balise p pour afficher l'indice UV
-            createElementHtml('p', divOtherInfos, `indiceUV${ville.nom}`, `indice-uv-${ville.nom.toLowerCase()}`, `indice UV : ${ville.indiceUV}`);
+            createElementHtml('p', divOtherInfos, `indiceUV${ville.nom}`, `indice-uv ${ville.nom.toLowerCase()}`, `indice UV : ${ville.indiceUV}`);
         });
     })
     .catch(error => console.error('Error fetching data:', error));
